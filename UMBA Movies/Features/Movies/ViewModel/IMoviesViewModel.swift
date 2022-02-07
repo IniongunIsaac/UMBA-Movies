@@ -13,7 +13,11 @@ protocol IMoviesViewModel {
     
     var movieDetailsHandler: ((MovieDetail) -> Void)? { get set }
     
+    var internetConnectivityHandler: ((Bool) -> Void)? { get set }
+    
     func getMovies()
+    
+    func getRemoteMovies()
     
     func getMovieDetails(id: Int)
     

@@ -26,6 +26,10 @@ class MoviesViewController: BaseViewController<MoviesView, IMoviesViewModel> {
         kview.movieSelectionHandler = { [weak self] movie in
             self?.viewModel.getMovieDetails(id: movie.id!)
         }
+        
+        kview.retryHandler = { [weak self] in
+            self?.viewModel.getRemoteMovies()
+        }
     }
     
     override func setChildViewControllerObservers() {
@@ -39,6 +43,10 @@ class MoviesViewController: BaseViewController<MoviesView, IMoviesViewModel> {
             self?._pushViewController(AppDelegate.dependencyContainer.movieDetailsController.apply {
                 $0.movieDetail = movieDetail
             })
+        }
+        
+        viewModel.internetConnectivityHandler = { [weak self] connected in
+            self?.kview.hasInternetConnection = connected
         }
     }
 

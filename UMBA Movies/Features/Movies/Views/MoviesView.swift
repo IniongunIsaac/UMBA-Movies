@@ -12,6 +12,7 @@ typealias MovieLists = (latest: [Movie], popular: [Movie], upcoming: [Movie])
 class MoviesView: BaseView {
     
     var movieSelectionHandler: ((Movie) -> Void)?
+    var retryHandler: NoParamHandler?
     fileprivate let CATEGORY_CELL_ID = "CategoryCollectionViewCell"
     fileprivate let MOVIE_CELL_ID = "MovieCollectionViewCell"
     fileprivate let categories = MovieCategory.allCases
@@ -52,14 +53,36 @@ class MoviesView: BaseView {
             $0.showsVerticalScrollIndicator = false
         }
     }()
+    fileprivate let noInternetContainerView = UIView(backgroundColor: .clear)
+    fileprivate let noInternetIconImageView = UIImageView(image: R.image.no_wifi_icon(), tintColor: .aSecondaryLabel, size: 60)
+    fileprivate let noInternetLabel = UILabel(text: "No internet connection!", font: .avenirRegular(16), numberOfLines: 0)
+    fileprivate lazy var retryButton: ACButton = {
+        ACButton(title: "Retry", height: 40, width: 120, tapAction: handleRetryButtonTapped)
+    }()
+    fileprivate lazy var noInternetStackview: VerticalStackView = {
+        VerticalStackView(arrangedSubviews: [noInternetIconImageView, noInternetLabel, retryButton], spacing: 20, alignment: .center)
+    }()
+    var hasInternetConnection: Bool = true {
+        didSet {
+            [categoriesLabel, categoriesCollectionView, moviesCollectionView].showViews(hasInternetConnection)
+            noInternetContainerView.showView(!hasInternetConnection)
+        }
+    }
     
     override func setup() {
         super.setup()
-        addSubviews(categoriesLabel, categoriesCollectionView, moviesCollectionView)
+        addSubviews(categoriesLabel, categoriesCollectionView, moviesCollectionView, noInternetContainerView)
         categoriesLabel.anchor(top: topAnchor, leading: leadingAnchor, trailing: trailingAnchor, padding: ._init(top: 10, left: 20, right: 20))
         categoriesCollectionView.anchor(top: categoriesLabel.bottomAnchor, leading: leadingAnchor, trailing: trailingAnchor, padding: ._init(top: 10, left: 15, right: 15))
         moviesCollectionView.anchor(top: categoriesCollectionView.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: ._init(top: 20, left: 15, bottom: 20, right: 15))
+        noInternetContainerView.do {
+            $0.fillSuperview()
+            $0.addSubview(noInternetStackview)
+        }
+        noInternetStackview.centerInSuperview()
+        
         refreshMovies()
+        
     }
     
     fileprivate func refreshMovies() {
@@ -104,6 +127,10 @@ extension MoviesView: UICollectionViewDelegate, UICollectionViewDataSource {
         } else {
             movieSelectionHandler?(movies[indexPath.item])
         }
+    }
+    
+    fileprivate func handleRetryButtonTapped() {
+        retryHandler?()
     }
     
 }

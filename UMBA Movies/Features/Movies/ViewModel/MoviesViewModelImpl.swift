@@ -7,16 +7,19 @@
 
 import Foundation
 import RxSwift
+import Alamofire
 
 class MoviesViewModelImpl: BaseViewModel, IMoviesViewModel {
     
     var movieListsHandler: ((MovieLists) -> Void)? = nil
     var movieDetailsHandler: ((MovieDetail) -> Void)? = nil
+    var internetConnectivityHandler: ((Bool) -> Void)? = nil
     
     fileprivate var preference: IPreference
     fileprivate let moviesRemote: IMoviesRemoteDatasource
     fileprivate let moviesLocal: IMoviesLocalDatasource
     fileprivate var hasFetchedMoviesFromRemote = false
+    fileprivate let connectivityManager = NetworkReachabilityManager()!
     
     init(preference: IPreference, moviesRemote: IMoviesRemoteDatasource, moviesLocal: IMoviesLocalDatasource) {
         self.preference = preference
@@ -37,7 +40,13 @@ class MoviesViewModelImpl: BaseViewModel, IMoviesViewModel {
         })
     }
     
-    fileprivate func getRemoteMovies() {
+    func getRemoteMovies() {
+        guard connectivityManager.isReachable else {
+            internetConnectivityHandler?(false)
+            return
+        }
+        internetConnectivityHandler?(true)
+        
         subscribe(Observable.zip(moviesRemote.getMovies(category: .latest), moviesRemote.getMovies(category: .popular), moviesRemote.getMovies(category: .upcoming)), success: { [weak self] movieResponse in
             self?.hasFetchedMoviesFromRemote = true
             let latestMovies = movieResponse.0.movies ?? []
