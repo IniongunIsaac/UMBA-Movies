@@ -14,5 +14,14 @@ class MoviesViewController: BaseViewController<MoviesView, IMoviesViewModel> {
         configureNavBar(title: "Movies", font: .avenirBold(18), barTextColor: .aLabel)
     }
     
+    override func configureViews() {
+        super.configureViews()
+        
+        viewModel.movieListsHandler = { [weak self] movieLists in
+            self?.kview.movieLists = movieLists
+        }
+        
+        viewModel.getMovies()
+    }
 
 }

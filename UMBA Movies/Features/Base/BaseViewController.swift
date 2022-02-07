@@ -15,7 +15,7 @@ class BaseViewController<VW: UIView, VM: Any>: UIViewController {
     
     let kview: VW
     fileprivate let baseViewModel: BaseViewModel
-    let viewModel: VM
+    var viewModel: VM
     let disposeBag = DisposeBag()
     var progressBar: HorizontalProgressbar?
     var preference: IPreference

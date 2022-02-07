@@ -9,4 +9,8 @@ import Foundation
 
 protocol IMoviesViewModel {
     
+    var movieListsHandler: ((MovieLists) -> Void)? { get set }
+    
+    func getMovies()
+    
 }
