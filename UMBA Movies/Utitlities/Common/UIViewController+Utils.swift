@@ -12,7 +12,7 @@ import Toast_Swift
 
 extension UIViewController {
     
-    func configureNavBar(title: String, barBgColor: UIColor = .primaryYellow, font: UIFont = .avenirBold(size: 15), barTextColor: UIColor = .primaryTextColor, prefersLargeTitle: Bool = false) {
+    func configureNavBar(title: String, barBgColor: UIColor = .primaryColor, font: UIFont = .avenirBold(15), barTextColor: UIColor = .primaryColor, prefersLargeTitle: Bool = false) {
         self.title = title
         navigationController?.navigationBar.apply {
             $0.prefersLargeTitles = prefersLargeTitle
@@ -23,7 +23,7 @@ extension UIViewController {
         }
     }
     
-    func configureNavBar(centerImage: UIImage? = nil, barTintColor: UIColor = .primaryYellow, tintColor: UIColor = UIColor("#31355B"), height: CGFloat? = nil, width: CGFloat? = nil) {
+    func configureNavBar(centerImage: UIImage? = nil, barTintColor: UIColor = .primaryColor, tintColor: UIColor = UIColor("#31355B"), height: CGFloat? = nil, width: CGFloat? = nil) {
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.do {
             $0.barTintColor = barTintColor
@@ -148,7 +148,7 @@ extension UIViewController {
         
         var toastStyle = ToastStyle()
         toastStyle.messageColor = .white
-        toastStyle.messageFont = .avenirRegular(size: 14)
+        toastStyle.messageFont = .avenirRegular(14)
         toastStyle.backgroundColor = color
         
         ToastManager.shared.isTapToDismissEnabled = true

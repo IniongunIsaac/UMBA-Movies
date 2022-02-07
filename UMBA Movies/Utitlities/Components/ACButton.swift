@@ -15,7 +15,7 @@ class ACButton: UIButton {
         super.init(frame: frame)
     }
     
-    convenience init(title: String? = nil, attributedTitle: NSAttributedString? = nil, font: UIFont = .avenirExtraBold(size: 15), backgroundColor: UIColor = .primaryYellow, textColor: UIColor = .primaryTextColor, borderWidth: CGFloat? = nil, borderColor: UIColor? = nil, cornerRadius: CGFloat = 5, height: CGFloat? = nil, width: CGFloat? = nil, size: CGFloat? = nil, image: UIImage? = nil, tintColor: UIColor? = nil, tapAction: (() -> Void)? = nil) {
+    convenience init(title: String? = nil, attributedTitle: NSAttributedString? = nil, font: UIFont = .avenirExtraBold(15), backgroundColor: UIColor = .primaryColor, textColor: UIColor = .white, borderWidth: CGFloat? = nil, borderColor: UIColor? = nil, cornerRadius: CGFloat = 5, height: CGFloat? = nil, width: CGFloat? = nil, size: CGFloat? = nil, image: UIImage? = nil, tintColor: UIColor? = nil, tapAction: (() -> Void)? = nil) {
         self.init(type: .system)
         self.backgroundColor = backgroundColor
         viewCornerRadius = cornerRadius
@@ -63,16 +63,6 @@ class ACButton: UIButton {
     
     @objc fileprivate func handleButtonTap() {
         tapAction?()
-    }
-    
-    override public var isEnabled: Bool {
-        didSet {
-            if isEnabled {
-                backgroundColor = .primaryYellow
-            } else {
-                backgroundColor = UIColor.primaryYellow.withAlphaComponent(0.5)
-            }
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {

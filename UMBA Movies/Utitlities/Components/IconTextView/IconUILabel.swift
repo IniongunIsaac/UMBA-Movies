@@ -9,7 +9,7 @@ import UIKit
 
 class IconUILabel: UILabel {
 
-    convenience init(text: String, font: UIFont = .avenirRegular(size: 15), icon: UIImage, position: IconPosition = .left, iconSize: Double = 18, iconPadding: Int = 3, textColor: UIColor = .aLabel, alignment: NSTextAlignment = .left) {
+    convenience init(text: String, font: UIFont = .avenirRegular(15), icon: UIImage, position: IconPosition = .left, iconSize: Double = 18, iconPadding: Int = 3, textColor: UIColor = .aLabel, alignment: NSTextAlignment = .left) {
         self.init(frame: .zero)
         
         let textAttrs = NSMutableAttributedString()

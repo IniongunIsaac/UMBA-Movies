@@ -44,8 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setupNavigationController() {
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.primaryTextColor]
-        UINavigationBar.appearance().tintColor = .primaryTextColor
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.primaryColor]
+        UINavigationBar.appearance().tintColor = .primaryColor
         UINavigationBar.appearance().layer.shadowColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 0.09).cgColor
         UINavigationBar.appearance().layer.shadowOffset = CGSize(width: 0.0, height: 5)
         UINavigationBar.appearance().layer.shadowRadius = 5.0

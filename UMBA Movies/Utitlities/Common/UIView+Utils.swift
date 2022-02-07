@@ -248,7 +248,7 @@ extension UICollectionView {
         messageLabel.textColor = .aLabel
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
-        messageLabel.font = .avenirRegular(size: 15)
+        messageLabel.font = .avenirRegular(15)
         messageLabel.sizeToFit()
 
         self.backgroundView = messageLabel
@@ -268,7 +268,7 @@ extension UITableView {
         messageLabel.textColor = .aLabel
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
-        messageLabel.font = .avenirRegular(size: 15)
+        messageLabel.font = .avenirRegular(15)
         messageLabel.sizeToFit()
 
         self.backgroundView = messageLabel
@@ -394,7 +394,7 @@ extension UISearchBar {
 
 extension UILabel {
     
-    convenience init(text: String, font: UIFont = .avenirRegular(size: 16), numberOfLines: Int = 1, color: UIColor = .aLabel, alignment: NSTextAlignment = .center, adjustsFontSizeToFitWidth: Bool = true, underlined: Bool = false) {
+    convenience init(text: String, font: UIFont = .avenirRegular(16), numberOfLines: Int = 1, color: UIColor = .aLabel, alignment: NSTextAlignment = .center, adjustsFontSizeToFitWidth: Bool = true, underlined: Bool = false) {
         self.init(frame: .zero)
         self.text = text
         self.textColor = color

@@ -17,15 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="autocheck_logo_all_clear" translatesAutoresizingMaskIntoConstraints="NO" id="TAs-Ik-0U5">
-                                <rect key="frame" x="72" y="416" width="270" height="64"/>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UMBA Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppa-Ju-KWD">
+                                <rect key="frame" x="140.5" y="434.5" width="133" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="PrimaryColor"/>
                         <constraints>
-                            <constraint firstItem="TAs-Ik-0U5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="KYw-ZD-Yeh"/>
-                            <constraint firstItem="TAs-Ik-0U5" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="v69-ki-7b9"/>
+                            <constraint firstItem="ppa-Ju-KWD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="EiV-qx-l5d"/>
+                            <constraint firstItem="ppa-Ju-KWD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="G0y-oI-Rg1"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -35,9 +38,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="autocheck_logo_all_clear" width="270" height="64"/>
         <namedColor name="PrimaryColor">
-            <color red="1" green="0.71399998664855957" blue="0.097999997437000275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23921568627450979" green="0.48627450980392156" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

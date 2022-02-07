@@ -24,7 +24,7 @@ class BaseViewController<VW: UIView, VM: Any>: UIViewController {
         navigationController?.navigationBar.frame.maxY ?? (Device.current.isOneOf(Device.allDevicesWithSensorHousing + Device.allSimulatorDevicesWithSensorHousing) ? 88 : 64)
     }
     
-    var progressBarColor: UIColor { .primaryTextColor }
+    var progressBarColor: UIColor { .primaryColor }
     
     init(viewModel: VM, preference: IPreference = PreferenceImpl()) {
         self.baseViewModel = viewModel as! BaseViewModel

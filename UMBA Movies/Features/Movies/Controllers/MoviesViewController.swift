@@ -11,6 +11,8 @@ class MoviesViewController: BaseViewController<MoviesView, IMoviesViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavBar(title: "Movies", font: .avenirBold(18), barTextColor: .aLabel)
     }
+    
 
 }

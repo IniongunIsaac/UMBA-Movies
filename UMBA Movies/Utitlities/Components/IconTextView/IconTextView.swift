@@ -16,7 +16,7 @@ class IconTextView: BaseView {
     fileprivate let textLabel = UILabel()
     fileprivate let iconImageView = UIImageView()
 
-    convenience init(text: String = "", font: UIFont = .avenirRegular(size: 15), placeholderIcon: UIImage? = nil, iconURL: String? = nil, iconTextAlignment: IconTextAlignment = .iconLeft, iconSize: CGFloat = 18, textColor: UIColor = .aLabel, numberOfLines: Int = 0, textAlignment: NSTextAlignment = .left, contentStackDistribution: UIStackView.Distribution = .fill, contentStackAlignment: UIStackView.Alignment = .fill, contentSpacing: CGFloat = 8) {
+    convenience init(text: String = "", font: UIFont = .avenirRegular(15), placeholderIcon: UIImage? = nil, iconURL: String? = nil, iconTextAlignment: IconTextAlignment = .iconLeft, iconSize: CGFloat = 18, textColor: UIColor = .aLabel, numberOfLines: Int = 0, textAlignment: NSTextAlignment = .left, contentStackDistribution: UIStackView.Distribution = .fill, contentStackAlignment: UIStackView.Alignment = .fill, contentSpacing: CGFloat = 8) {
         self.init(frame: .zero)
         
         textLabel.apply {
