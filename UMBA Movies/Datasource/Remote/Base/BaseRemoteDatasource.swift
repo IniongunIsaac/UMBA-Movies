@@ -9,7 +9,6 @@ import Foundation
 import Alamofire
 import RxAlamofire
 import RxSwift
-import SwiftyJSON
 
 class BaseRemoteDatasource {
     

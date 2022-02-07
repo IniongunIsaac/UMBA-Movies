@@ -9,16 +9,7 @@ import UIKit
 
 extension UIColor {
     
-    @nonobjc class var primaryYellow: UIColor{
-        return UIColor("#FFBF1F")
-    }
-    @nonobjc class var primaryTextColor: UIColor{
-        return UIColor("#31355B")
-    }
-    
-    @nonobjc class var primaryGrey: UIColor {
-        return UIColor("#EEEEEE")
-    }
+    static var primaryColor: UIColor { R.color.primaryColor()! }
     
     static var appGreen: UIColor { UIColor("#21B51E") }
     

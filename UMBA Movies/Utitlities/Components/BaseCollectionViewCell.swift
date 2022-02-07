@@ -28,6 +28,10 @@ class BaseCollectionViewCell: UICollectionViewCell {
         contentView.addSubviews(views)
     }
     
+    func _addSubview(_ view: UIView) {
+        contentView.addSubview(view)
+    }
+    
     var _topAnchor: NSLayoutYAxisAnchor? { contentView.topAnchor }
     
     var _bottomAnchor: NSLayoutYAxisAnchor? { contentView.bottomAnchor }

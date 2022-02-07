@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		143D25D627B0937E0003427A /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D25D527B0937E0003427A /* CategoryCollectionViewCell.swift */; };
+		143D25D827B0941C0003427A /* MovieCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D25D727B0941C0003427A /* MovieCategory.swift */; };
 		144E60A727ADBBF00095574C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E60A627ADBBF00095574C /* Movie.swift */; };
 		144E60A927ADBC4C0095574C /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E60A827ADBC4C0095574C /* MovieResponse.swift */; };
 		144E60AB27ADBCE60095574C /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E60AA27ADBCE60095574C /* MovieDetail.swift */; };
@@ -89,6 +91,8 @@
 
 /* Begin PBXFileReference section */
 		06C03795D8A4901FBB871C5E /* Pods-UMBA Movies-UMBA MoviesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMBA Movies-UMBA MoviesUITests.release.xcconfig"; path = "Target Support Files/Pods-UMBA Movies-UMBA MoviesUITests/Pods-UMBA Movies-UMBA MoviesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		143D25D527B0937E0003427A /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		143D25D727B0941C0003427A /* MovieCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCategory.swift; sourceTree = "<group>"; };
 		144E60A627ADBBF00095574C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		144E60A827ADBC4C0095574C /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
 		144E60AA27ADBCE60095574C /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 			children = (
 				144E60B827ADC31D0095574C /* MoviesView.swift */,
 				144E60BA27ADC32E0095574C /* MovieDetailsView.swift */,
+				143D25D527B0937E0003427A /* CategoryCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 		144E60B727ADC2CE0095574C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				143D25D727B0941C0003427A /* MovieCategory.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -769,6 +775,7 @@
 				14C38307277CC7EA00FB5FCB /* BaseTableViewCell.swift in Sources */,
 				14D0FC8C277DD728007F62C8 /* BaseRemoteDatasource.swift in Sources */,
 				148E02C627805BA200D650D8 /* BaseScrollView.swift in Sources */,
+				143D25D627B0937E0003427A /* CategoryCollectionViewCell.swift in Sources */,
 				14C382F3277CB9DF00FB5FCB /* UIView+Utils.swift in Sources */,
 				144E60C727ADC7070095574C /* Loader.swift in Sources */,
 				144E60C527ADC4030095574C /* MoviesDependencyContainer.swift in Sources */,
@@ -794,6 +801,7 @@
 				144E60A927ADBC4C0095574C /* MovieResponse.swift in Sources */,
 				14D0FCA5277E18F1007F62C8 /* IconTextView.swift in Sources */,
 				14D0FC76277DB3E3007F62C8 /* IBaseViewModel.swift in Sources */,
+				143D25D827B0941C0003427A /* MovieCategory.swift in Sources */,
 				144E60C327ADC3B50095574C /* MoviesViewModelImpl.swift in Sources */,
 				14C3830B277CC95A00FB5FCB /* Toast.swift in Sources */,
 				14F151F5277F397E00D2A606 /* Numeric+Utils.swift in Sources */,
@@ -979,10 +987,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IMAGES_BASE_URL = "https://image.tmdb.org/t/p/";
 				INFOPLIST_FILE = "UMBA Movies/Resources/Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is required to capture files for upload.";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "By accessing your location, we can tell you the pickup points nearest to you.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "By accessing your location, we can tell you the pickup points nearest to you.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your Photo Library to select files for upload.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1018,10 +1022,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IMAGES_BASE_URL = "https://image.tmdb.org/t/p/";
 				INFOPLIST_FILE = "UMBA Movies/Resources/Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is required to capture files for upload.";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "By accessing your location, we can tell you the pickup points nearest to you.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "By accessing your location, we can tell you the pickup points nearest to you.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your Photo Library to select files for upload.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
