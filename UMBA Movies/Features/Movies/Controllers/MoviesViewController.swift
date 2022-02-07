@@ -14,14 +14,32 @@ class MoviesViewController: BaseViewController<MoviesView, IMoviesViewModel> {
         configureNavBar(title: "Movies", font: .avenirBold(18), barTextColor: .aLabel)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showNavBar()
+    }
+    
     override func configureViews() {
         super.configureViews()
+        viewModel.getMovies()
+        
+        kview.movieSelectionHandler = { [weak self] movie in
+            self?.viewModel.getMovieDetails(id: movie.id!)
+        }
+    }
+    
+    override func setChildViewControllerObservers() {
+        super.setChildViewControllerObservers()
         
         viewModel.movieListsHandler = { [weak self] movieLists in
             self?.kview.movieLists = movieLists
         }
         
-        viewModel.getMovies()
+        viewModel.movieDetailsHandler = { [weak self] movieDetail in
+            self?._pushViewController(AppDelegate.dependencyContainer.movieDetailsController.apply {
+                $0.movieDetail = movieDetail
+            })
+        }
     }
 
 }

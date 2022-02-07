@@ -18,6 +18,8 @@ struct MoviesDependencyContainer {
         
         container.register(MoviesViewController.self) { MoviesViewController(viewModel: $0.resolve(IMoviesViewModel.self)!) }
         
+        container.register(MovieDetailsViewController.self) { MovieDetailsViewController(viewModel: $0.resolve(IMoviesViewModel.self)!) }
+        
     }
     
 }

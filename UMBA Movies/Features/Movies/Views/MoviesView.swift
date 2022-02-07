@@ -106,12 +106,4 @@ extension MoviesView: UICollectionViewDelegate, UICollectionViewDataSource {
         }
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if collectionView == categoriesCollectionView {
-//            return UICollectionViewFlowLayout.automaticSize
-//        } else {
-//            return CGSize(width: (UIScreen.main.bounds.width / 2) - 30, height: 340) //CGSize(width: collectionView.width, height: 350)
-//        }
-//    }
-    
 }

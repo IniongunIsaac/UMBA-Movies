@@ -26,6 +26,8 @@ struct MovieDetail: Codable, Scopable {
     let video: Bool?
     let voteAverage: Double?
     let voteCount: Int?
+    
+    var posterURL: String { "\(Bundle.main.imagesBaseURL)\(posterPath ?? (backdropPath ?? ""))" }
 
     enum CodingKeys: String, CodingKey {
         case adult

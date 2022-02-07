@@ -11,6 +11,10 @@ protocol IMoviesViewModel {
     
     var movieListsHandler: ((MovieLists) -> Void)? { get set }
     
+    var movieDetailsHandler: ((MovieDetail) -> Void)? { get set }
+    
     func getMovies()
+    
+    func getMovieDetails(id: Int)
     
 }

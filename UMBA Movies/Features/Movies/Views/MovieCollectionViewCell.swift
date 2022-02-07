@@ -36,8 +36,8 @@ class MovieCollectionViewCell: BaseCollectionViewCell {
     
     func configure(_ movie: Movie) {
         movie.do {
-            if let posterPath = $0.posterPath {
-                posterImageView.setImageFromURL(url: "\(Bundle.main.imagesBaseURL)\(posterPath)", placeholderImage: R.image.poster_placeholder())
+            if $0.posterPath.isNotNil {
+                posterImageView.setImageFromURL(url: $0.posterURL, placeholderImage: R.image.poster_placeholder())
             }
             movieNameLabel.text = $0.title
             votesIconTextView.text = $0.voteCount?.string

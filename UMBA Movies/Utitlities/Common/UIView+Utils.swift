@@ -150,7 +150,7 @@ extension UIView {
         }
     }
     
-    func animateViewOnTapGesture(duration: TimeInterval = 0.5, completion: (() -> Void)? = nil) {
+    func animateViewOnTapGesture(duration: TimeInterval = 0.1, completion: (() -> Void)? = nil) {
         addTapGesture {
             self.animateView(duration: duration, completion: completion)
         }

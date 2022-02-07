@@ -19,4 +19,6 @@ struct DependencyContainer {
 
 extension Container {
     var moviesController: MoviesViewController { resolve(MoviesViewController.self)! }
+    
+    var movieDetailsController: MovieDetailsViewController { resolve(MovieDetailsViewController.self)! }
 }

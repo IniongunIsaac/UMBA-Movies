@@ -18,6 +18,8 @@ struct Movie: Codable, Scopable {
     let voteCount: Int?
     let video: Bool?
     let voteAverage: Double?
+    
+    var posterURL: String { "\(Bundle.main.imagesBaseURL)\(posterPath!)" }
 
     enum CodingKeys: String, CodingKey {
         case posterPath = "poster_path"

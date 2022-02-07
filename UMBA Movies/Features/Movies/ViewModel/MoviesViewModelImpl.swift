@@ -11,6 +11,7 @@ import RxSwift
 class MoviesViewModelImpl: BaseViewModel, IMoviesViewModel {
     
     var movieListsHandler: ((MovieLists) -> Void)? = nil
+    var movieDetailsHandler: ((MovieDetail) -> Void)? = nil
     
     var preference: IPreference
     fileprivate let moviesRemote: IMoviesRemoteDatasource
@@ -23,6 +24,12 @@ class MoviesViewModelImpl: BaseViewModel, IMoviesViewModel {
     func getMovies() {
         subscribe(Observable.zip(moviesRemote.getMovies(category: .latest), moviesRemote.getMovies(category: .popular), moviesRemote.getMovies(category: .upcoming)), success: { [weak self] movieResponse in
             self?.movieListsHandler?((movieResponse.0.movies ?? [], movieResponse.1.movies ?? [], movieResponse.2.movies ?? []))
+        })
+    }
+    
+    func getMovieDetails(id: Int) {
+        subscribe(moviesRemote.getMovieDetails(id: id), success: { [weak self] movieDetail in
+            self?.movieDetailsHandler?(movieDetail)
         })
     }
     
