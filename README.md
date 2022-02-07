@@ -20,6 +20,6 @@ The app was built using the following:
 * Build and run the project on the XCode Simulator or any physically connected iOS device.
 
 ## Screenshots
-<img src="https://github.com/IniongunIsaac/UMBA-Movies/blob/main/Screenshots/movies.png" width="400" height="950" alt="Movies">     <img src="https://github.com/IniongunIsaac/UMBA-Movies/blob/main/Screenshots/movie_details.png" width="400" height="950" alt="Movie Details">
+<img src="https://github.com/IniongunIsaac/UMBA-Movies/blob/main/Screenshots/movies.png" width="400" height="850" alt="Movies">     <img src="https://github.com/IniongunIsaac/UMBA-Movies/blob/main/Screenshots/movie_details.png" width="400" height="850" alt="Movie Details">
 
 
