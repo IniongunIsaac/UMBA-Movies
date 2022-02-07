@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import RealmSwift
 
-enum MovieCategory: String, CaseIterable {
+enum MovieCategory: String, CaseIterable, PersistableEnum {
     case latest, popular, upcoming
 }

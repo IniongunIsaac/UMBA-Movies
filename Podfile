@@ -9,6 +9,7 @@ end
 
 def utilityPods
   pod 'RealmSwift', '~>10'
+  pod "RxRealm"
   pod 'lottie-ios', '3.1.1'
   pod 'R.swift'
   pod 'BottomPopup'

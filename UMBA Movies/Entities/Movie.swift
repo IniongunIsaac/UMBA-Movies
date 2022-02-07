@@ -6,34 +6,50 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct Movie: Codable, Scopable {
-    let posterPath: String?
-    let adult: Bool?
-    let overview, releaseDate: String?
-    let genreIDS: [Int]?
     let id: Int?
-    let originalTitle, originalLanguage, title, backdropPath: String?
-    let popularity: Double?
+    let posterPath: String?
+    let title: String?
+    let releaseDate: String?
     let voteCount: Int?
-    let video: Bool?
-    let voteAverage: Double?
     
     var posterURL: String { "\(Bundle.main.imagesBaseURL)\(posterPath!)" }
 
     enum CodingKeys: String, CodingKey {
         case posterPath = "poster_path"
-        case adult, overview
         case releaseDate = "release_date"
-        case genreIDS = "genre_ids"
         case id
-        case originalTitle = "original_title"
-        case originalLanguage = "original_language"
         case title
-        case backdropPath = "backdrop_path"
-        case popularity
         case voteCount = "vote_count"
-        case video
-        case voteAverage = "vote_average"
+    }
+    
+    func dbMovie(category: MovieCategory) -> DBMovie {
+        DBMovie(id: id, posterPath: posterPath, title: title, releaseDate: releaseDate, voteCount: voteCount, category: category)
+    }
+}
+
+
+class DBMovie: Object {
+    @Persisted(primaryKey: true) var movieId: Int
+    @Persisted var posterPath: String?
+    @Persisted var title: String?
+    @Persisted var releaseDate: String?
+    @Persisted var voteCount: Int?
+    @Persisted var category: MovieCategory?
+    
+    var movie: Movie {
+        Movie(id: movieId, posterPath: posterPath, title: title, releaseDate: releaseDate, voteCount: voteCount)
+    }
+    
+    convenience init(id: Int?, posterPath: String?, title: String?, releaseDate: String?, voteCount: Int?, category: MovieCategory) {
+        self.init()
+        movieId = id!
+        self.posterPath = posterPath
+        self.title = title
+        self.releaseDate = releaseDate
+        self.voteCount = voteCount
+        self.category = category
     }
 }

@@ -14,7 +14,7 @@ struct MoviesDependencyContainer {
         
         container.register(IMoviesRemoteDatasource.self) { _ in MoviesRemoteDatasourceImpl() }
         
-        container.register(IMoviesViewModel.self) { MoviesViewModelImpl(preference: $0.resolve(IPreference.self)!, moviesRemote: $0.resolve(IMoviesRemoteDatasource.self)!) }
+        container.register(IMoviesViewModel.self) { MoviesViewModelImpl(preference: $0.resolve(IPreference.self)!, moviesRemote: $0.resolve(IMoviesRemoteDatasource.self)!, moviesLocal: $0.resolve(IMoviesLocalDatasource.self)!) }
         
         container.register(MoviesViewController.self) { MoviesViewController(viewModel: $0.resolve(IMoviesViewModel.self)!) }
         

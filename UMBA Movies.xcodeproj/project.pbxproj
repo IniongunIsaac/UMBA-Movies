@@ -50,6 +50,10 @@
 		14C3830B277CC95A00FB5FCB /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3830A277CC95A00FB5FCB /* Toast.swift */; };
 		14C38311277CCDD700FB5FCB /* ACButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C38310277CCDD700FB5FCB /* ACButton.swift */; };
 		14C8DDC927B1BC94003A350E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 14C8DDC827B1BC94003A350E /* README.md */; };
+		14C8DDCF27B1CBB3003A350E /* Realm+Rx+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8DDCE27B1CBB3003A350E /* Realm+Rx+Extensions.swift */; };
+		14C8DDD127B1CC17003A350E /* BaseLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8DDD027B1CC17003A350E /* BaseLocalDatasource.swift */; };
+		14C8DDD427B1CD75003A350E /* IMoviesLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8DDD327B1CD75003A350E /* IMoviesLocalDatasource.swift */; };
+		14C8DDD627B1CDAD003A350E /* MoviesLocalDatasourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8DDD527B1CDAD003A350E /* MoviesLocalDatasourceImpl.swift */; };
 		14D0FC74277DB1F9007F62C8 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0FC73277DB1F9007F62C8 /* BaseViewModel.swift */; };
 		14D0FC76277DB3E3007F62C8 /* IBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0FC75277DB3E3007F62C8 /* IBaseViewModel.swift */; };
 		14D0FC7A277DB4D1007F62C8 /* ViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0FC79277DB4D1007F62C8 /* ViewControllerType.swift */; };
@@ -142,6 +146,10 @@
 		14C8DDC827B1BC94003A350E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		14C8DDCB27B1BDCC003A350E /* movies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movies.png; sourceTree = "<group>"; };
 		14C8DDCC27B1BDCD003A350E /* movie_details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie_details.png; sourceTree = "<group>"; };
+		14C8DDCE27B1CBB3003A350E /* Realm+Rx+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+Rx+Extensions.swift"; sourceTree = "<group>"; };
+		14C8DDD027B1CC17003A350E /* BaseLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLocalDatasource.swift; sourceTree = "<group>"; };
+		14C8DDD327B1CD75003A350E /* IMoviesLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMoviesLocalDatasource.swift; sourceTree = "<group>"; };
+		14C8DDD527B1CDAD003A350E /* MoviesLocalDatasourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesLocalDatasourceImpl.swift; sourceTree = "<group>"; };
 		14D0FC73277DB1F9007F62C8 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		14D0FC75277DB3E3007F62C8 /* IBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBaseViewModel.swift; sourceTree = "<group>"; };
 		14D0FC79277DB4D1007F62C8 /* ViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerType.swift; sourceTree = "<group>"; };
@@ -398,6 +406,24 @@
 			path = Screenshots;
 			sourceTree = "<group>";
 		};
+		14C8DDCD27B1CB9F003A350E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				14C8DDCE27B1CBB3003A350E /* Realm+Rx+Extensions.swift */,
+				14C8DDD027B1CC17003A350E /* BaseLocalDatasource.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		14C8DDD227B1CD5A003A350E /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				14C8DDD327B1CD75003A350E /* IMoviesLocalDatasource.swift */,
+				14C8DDD527B1CDAD003A350E /* MoviesLocalDatasourceImpl.swift */,
+			);
+			path = Movies;
+			sourceTree = "<group>";
+		};
 		14D0FC66277DB00A007F62C8 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -420,6 +446,8 @@
 		14D0FC69277DB065007F62C8 /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				14C8DDD227B1CD5A003A350E /* Movies */,
+				14C8DDCD27B1CB9F003A350E /* Utils */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -782,9 +810,11 @@
 				144E60C127ADC3960095574C /* IMoviesViewModel.swift in Sources */,
 				144E60AE27ADBE2C0095574C /* IMoviesRemoteDatasource.swift in Sources */,
 				144E60BF27ADC36F0095574C /* MovieDetailsViewController.swift in Sources */,
+				14C8DDD627B1CDAD003A350E /* MoviesLocalDatasourceImpl.swift in Sources */,
 				14F151FB277F9F6800D2A606 /* CommonDependencyContainer.swift in Sources */,
 				14D0FC82277DB9D7007F62C8 /* AlertMessage.swift in Sources */,
 				144E60B027ADBE4B0095574C /* MoviesRemoteDatasourceImpl.swift in Sources */,
+				14C8DDCF27B1CBB3003A350E /* Realm+Rx+Extensions.swift in Sources */,
 				144E60AB27ADBCE60095574C /* MovieDetail.swift in Sources */,
 				144E60B927ADC31D0095574C /* MoviesView.swift in Sources */,
 				144E60BD27ADC34B0095574C /* MoviesViewController.swift in Sources */,
@@ -812,6 +842,7 @@
 				14D0FC91277DDB88007F62C8 /* RemotePath.swift in Sources */,
 				14C382EF277CB8AC00FB5FCB /* UIFont+Utils.swift in Sources */,
 				14C382EA277CAC1800FB5FCB /* UIColor+Utils.swift in Sources */,
+				14C8DDD427B1CD75003A350E /* IMoviesLocalDatasource.swift in Sources */,
 				14F151F1277EFA8F00D2A606 /* BaseCollectionView.swift in Sources */,
 				14C38303277CC78000FB5FCB /* StackView.swift in Sources */,
 				14D0FC84277DC835007F62C8 /* IPreference.swift in Sources */,
@@ -821,6 +852,7 @@
 				14D0FCA5277E18F1007F62C8 /* IconTextView.swift in Sources */,
 				14D0FC76277DB3E3007F62C8 /* IBaseViewModel.swift in Sources */,
 				143D25D827B0941C0003427A /* MovieCategory.swift in Sources */,
+				14C8DDD127B1CC17003A350E /* BaseLocalDatasource.swift in Sources */,
 				144E60C327ADC3B50095574C /* MoviesViewModelImpl.swift in Sources */,
 				14C3830B277CC95A00FB5FCB /* Toast.swift in Sources */,
 				14F151F5277F397E00D2A606 /* Numeric+Utils.swift in Sources */,
